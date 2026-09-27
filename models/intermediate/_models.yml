@@ -2,28 +2,28 @@ version: 2
 
 models:
   - name: dim_customers
-    description: Customer-level summary of rental and payment activity.
+    description: Ringkasan aktivitas rental dan pembayaran per customer.
     columns:
       - name: customer_id
-        description: Unique customer identifier.
+        description: ID unik customer.
         data_tests:
           - not_null
           - unique
 
   - name: dim_films
-    description: Film-level summary with category, rating, inventory, and rental activity.
+    description: Ringkasan film beserta kategori, rating, inventory, dan aktivitas rental.
     columns:
       - name: film_id
-        description: Unique film identifier.
+        description: ID unik film.
         data_tests:
           - not_null
           - unique
 
   - name: fact_payments
-    description: Payment transactions enriched with customer, store, rental, and film details.
+    description: Transaksi pembayaran yang dilengkapi informasi customer, store, rental, dan film.
     columns:
       - name: payment_id
-        description: Unique payment identifier.
+        description: ID unik pembayaran.
         data_tests:
           - not_null
           - unique
