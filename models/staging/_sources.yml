@@ -1,0 +1,15 @@
+﻿version: 2
+
+sources:
+  - name: pagila
+    schema: public
+    tables:
+      - name: customer
+      - name: rental
+      - name: payment
+      - name: film
+      - name: inventory
+      - name: store
+      - name: category
+      - name: film_category
+      - name: film_embedding
