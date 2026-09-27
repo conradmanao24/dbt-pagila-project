@@ -52,9 +52,10 @@
       DBT_DBNAME: ${POSTGRES_DB:-pagila}
     volumes:
       - .:/usr/app
-    working_dir: /usr/app/assignment
+    working_dir: /usr/app
 volumes:
   postgres_data:
   dbgate_data:
+
 
 
