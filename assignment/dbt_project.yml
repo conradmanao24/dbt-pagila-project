@@ -1,0 +1,27 @@
+﻿name: 'dbt_assignment'
+version: '1.0.0'
+config-version: 2
+
+profile: 'dbt_pagila'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  dbt_assignment:
+    +schema: assignment
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: table
+    marts:
+      +materialized: table
+
+seeds:
+  dbt_assignment:
+    +schema: assignment

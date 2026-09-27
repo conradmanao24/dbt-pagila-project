@@ -36,7 +36,25 @@
     volumes:
       - dbgate_data:/root/.dbgate
 
+
+  dbt:
+    build: ./docker/dbt
+    profiles: ["dbt"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DBT_PROFILES_DIR: /usr/app
+      DBT_HOST: postgres
+      DBT_PORT: "5432"
+      DBT_USER: ${POSTGRES_USER:-postgres}
+      DBT_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      DBT_DBNAME: ${POSTGRES_DB:-pagila}
+    volumes:
+      - .:/usr/app
+    working_dir: /usr/app/assignment
 volumes:
   postgres_data:
   dbgate_data:
+
 
