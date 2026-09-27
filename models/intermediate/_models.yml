@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: Customer-level summary of rental and payment activity.
+    columns:
+      - name: customer_id
+        description: Unique customer identifier.
+        data_tests:
+          - not_null
+          - unique
+
+  - name: dim_films
+    description: Film-level summary with category, rating, inventory, and rental activity.
+    columns:
+      - name: film_id
+        description: Unique film identifier.
+        data_tests:
+          - not_null
+          - unique
+
+  - name: fact_payments
+    description: Payment transactions enriched with customer, store, rental, and film details.
+    columns:
+      - name: payment_id
+        description: Unique payment identifier.
+        data_tests:
+          - not_null
+          - unique

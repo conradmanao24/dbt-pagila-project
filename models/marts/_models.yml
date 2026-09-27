@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: mart_customer_performance
+    description: Customer performance summary for rentals and lifetime payments.
+    columns:
+      - name: customer_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: mart_daily_revenue
+    description: Daily payment and revenue summary by store.
+    columns:
+      - name: paid_date
+        data_tests:
+          - not_null
+      - name: store_id
+        data_tests:
+          - not_null
+
+  - name: mart_film_performance
+    description: Film performance summary with rental activity and revenue.
+    columns:
+      - name: film_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: mart_similar_films
+    description: Top five similar films for each film using pgvector similarity.
+    columns:
+      - name: film_id
+        data_tests:
+          - not_null
+      - name: similar_film_id
+        data_tests:
+          - not_null
+      - name: similarity_rank
+        data_tests:
+          - not_null
