@@ -1,4 +1,4 @@
-﻿dbt_pagila:
+dbt_pagila:
   target: dev
   outputs:
     dev:
@@ -8,5 +8,5 @@
       user: "{{ env_var('DBT_USER', 'postgres') }}"
       pass: "{{ env_var('DBT_PASSWORD', 'postgres') }}"
       dbname: "{{ env_var('DBT_DBNAME', 'pagila') }}"
-      schema: dev
+      schema: dbt_pagila
       threads: 4

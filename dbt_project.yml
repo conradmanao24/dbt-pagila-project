@@ -1,4 +1,4 @@
-﻿name: 'dbt_assignment'
+name: 'dbt_pagila'
 version: '1.0.0'
 config-version: 2
 
@@ -13,15 +13,10 @@ target-path: "target"
 clean-targets: ["target", "dbt_packages"]
 
 models:
-  dbt_assignment:
-    +schema: assignment
+  dbt_pagila:
     staging:
       +materialized: view
     intermediate:
       +materialized: table
     marts:
       +materialized: table
-
-seeds:
-  dbt_assignment:
-    +schema: assignment
